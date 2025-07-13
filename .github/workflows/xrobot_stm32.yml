@@ -21,10 +21,10 @@ jobs:
     - name: install pip packages
       run: pip install libxr xrobot
     - name: config libxr
-      run: xr_cubemx_cfg -d ./ -c --xrobot
+      run: xr_cubemx_cfg -d ./ --xrobot
     - name: config xrobot
       run: xrobot_setup && xrobot_setup
     - name: config cmake
-      run: cmake . -DDEV_C_TEST_BUILD=True -DCMAKE_TOOLCHAIN_FILE:STRING=cmake/gcc-arm-none-eabi.cmake -DCMAKE_EXPORT_COMPILE_COMMANDS:BOOL=TRUE -Bbuild -G Ninja
+      run: export GCC_TOOLCHAIN_ROOT=/opt/arm-gnu-toolchain-14.2.rel1-x86_64-arm-none-eabi/bin && export CLANG_GCC_CMSIS_COMPILER=/opt/st-arm-clang && cmake . -DCMAKE_TOOLCHAIN_FILE:STRING=cmake/starm-clang.cmake -DCMAKE_EXPORT_COMPILE_COMMANDS:BOOL=TRUE -Bbuild -G Ninja
     - name: build
       run: cmake --build build
