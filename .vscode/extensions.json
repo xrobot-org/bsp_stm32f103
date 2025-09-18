@@ -1,6 +1,5 @@
 {
     "recommendations": [
-        "ms-vscode.cpptools", // (dependencies to ms-vscode.cpptools-extension-pack)
         "ms-vscode.cpptools-themes", // (dependencies to ms-vscode.cpptools-extension-pack)
         "ms-vscode.cmake-tools", // (dependencies to ms-vscode.cpptools-extension-pack)
         "twxs.cmake", // (dependencies to ms-vscode.cpptools-extension-pack)
@@ -15,9 +14,8 @@
         "mcu-debug.memory-view", // Dependencies to "marus25.cortex-debug"
         "mcu-debug.peripheral-viewer", // Dependencies to "marus25.cortex-debug"
         "mcu-debug.rtos-views",
-        "llvm-vs-code-extensions.vscode-clangd",
+        "stmicroelectronics.stm32cube-ide-clangd" // Dependencies to "marus25.cortex-debug"
     ],
     "unwantedRecommendations": [
-        "stmicroelectronics.stm32cube-ide-clangd" // Dependencies to "marus25.cortex-debug"
     ]
 }
