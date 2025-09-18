@@ -1,4 +1,4 @@
-terminal_source: ''
+terminal_source: usb_fs_cdc
 software_timer:
   priority: 5
   stack_depth: 1024
@@ -21,7 +21,23 @@ ADC:
     vref: 3.3
     dma_section: ''
 USB:
-  tx_queue_size: 15
+  usb_fs:
+    enable: true
+    ep0_packet_size: 8
+    tx_buffer_size: 128
+    rx_buffer_size: 128
+    rx_fifo_size: 128
+    tx_fifo_size: 128
+    dma_section: ''
+    cdc_tx_fifo_size: 128
+    cdc_rx_fifo_size: 128
+    cdc_queue_size: 3
+    vid: 1155
+    pid: 22336
+    bcd: 62471
+    manufacturer: XRobot
+    product: STM32 XRUSB USB CDC Demo
+    serial: '123456789'
 Terminal:
   read_buff_size: 32
   max_line_size: 32
@@ -29,35 +45,6 @@ Terminal:
   max_history_number: 5
   run_as_thread: false
 SYSTEM: FreeRTOS
-device_aliases:
-  power_manager:
-    type: PowerManager
-    aliases:
-    - power_manager
-  LED:
-    type: GPIO
-    aliases:
-    - LED
-  pwm_tim2_ch3:
-    type: PWM
-    aliases:
-    - pwm_tim2_ch3
-  adc1_adc_channel_0:
-    type: ADC
-    aliases:
-    - adc1_adc_channel_0
-  spi1:
-    type: SPI
-    aliases:
-    - spi1
-  usart1:
-    type: UART
-    aliases:
-    - usart1
-  uart_cdc:
-    type: UART
-    aliases:
-    - uart_cdc
 FlashLayout:
   model: STM32F103RCT6
   flash_base: '0x08000000'
@@ -447,3 +434,44 @@ FlashLayout:
   - index: 127
     address: '0x0803F800'
     size_kb: 2.0
+device_aliases:
+  power_manager:
+    type: PowerManager
+    aliases:
+    - power_manager
+  PA8:
+    type: GPIO
+    aliases:
+    - PA8
+  LED:
+    type: GPIO
+    aliases:
+    - LED
+  pwm_tim2_ch3:
+    type: PWM
+    aliases:
+    - pwm_tim2_ch3
+  adc1_adc_channel_0:
+    type: ADC
+    aliases:
+    - adc1_adc_channel_0
+  spi1:
+    type: SPI
+    aliases:
+    - spi1
+  usart1:
+    type: UART
+    aliases:
+    - usart1
+  usb_fs_cdc:
+    type: UART
+    aliases:
+    - usb_fs_cdc
+  ramfs:
+    type: RamFS
+    aliases:
+    - ramfs
+  terminal:
+    type: Terminal<32, 32, 5, 5>
+    aliases:
+    - terminal

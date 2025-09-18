@@ -70,3 +70,5 @@ Diagnostics:
       readability-identifier-naming.FunctionCase: lower_case
       readability-identifier-naming.ClassMethodCase: CamelCase
       readability-identifier-naming.MethodCase: CamelCase
+CompileFlags:
+  CompilationDatabase: build/debug

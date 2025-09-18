@@ -1,6 +1,5 @@
 cmake_minimum_required(VERSION 3.22)
 
-
 #
 # This file is generated only once,
 # and is not re-generated if converter is called multiple times.
@@ -22,16 +21,15 @@ endif()
 # Set the project name
 set(CMAKE_PROJECT_NAME BluePill)
 
-
 # Enable compile command to ease indexing with e.g. clangd
 set(CMAKE_EXPORT_COMPILE_COMMANDS TRUE)
-
-# Enable CMake support for ASM and C languages
-enable_language(C ASM)
 
 # Core project settings
 project(${CMAKE_PROJECT_NAME})
 message("Build type: " ${CMAKE_BUILD_TYPE})
+
+# Enable CMake support for ASM and C languages
+enable_language(C ASM)
 
 # Create an executable object type
 add_executable(${CMAKE_PROJECT_NAME})
@@ -102,4 +100,3 @@ endfunction()
 create_hex_output(${PROJECT_NAME})
 create_bin_output(${PROJECT_NAME})
 print_section_sizes(${PROJECT_NAME})
-

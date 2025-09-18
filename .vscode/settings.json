@@ -6,22 +6,10 @@
     "cmake.preferredGenerators": [
         "Ninja"
     ],
-    "clangd.onConfigChanged": "restart",
-    "clangd.arguments": [
-        "--query-driver=${env:CUBE_BUNDLE_PATH}/st-arm-clang/19.1.6+st.8/bin/starm-clang.exe,${env:CUBE_BUNDLE_PATH}/st-arm-clang/19.1.6+st.8/bin/starm-clang++.exe",
-        "--background-index",
-        "--clang-tidy",
-        "--compile-commands-dir=${workspaceRoot}/build/Debug",
-        "--completion-style=detailed",
-        "--enable-config",
-        "--fallback-style=Google",
-        "--function-arg-placeholders=false",
-        "--header-insertion=never",
-        "--log=verbose",
-        "--pch-storage=memory",
-        "--pretty",
-        "--ranking-model=heuristics",
-        "-j=8",
-    ],
-    "clangd.path": "clangd",
+    "stm32cube-ide-clangd.path": "cube",
+    "stm32cube-ide-clangd.arguments": [
+        "starm-clangd",
+        "--query-driver=${env:CUBE_BUNDLE_PATH}/st-arm-clang/19.1.6+st.9/bin/starm-clang",
+        "--query-driver=${env:CUBE_BUNDLE_PATH}/st-arm-clang/19.1.6+st.9/bin/starm-clang++"
+    ]
 }

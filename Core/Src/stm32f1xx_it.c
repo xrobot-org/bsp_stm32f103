@@ -52,9 +52,6 @@
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
 /* LibXR USB Tx Cplt callback (Auto-generated, For STM32F1) */
-#if defined(STM32F1) && defined(HAL_PCD_MODULE_ENABLED)
-extern void STM32_USB_ISR_Handler_F1(void);
-#endif
 /* LibXR UART IDLE callback (Auto-generated) */
 #ifdef HAL_UART_MODULE_ENABLED
 extern void STM32_UART_ISR_Handler_IDLE(UART_HandleTypeDef *huart);
@@ -63,10 +60,10 @@ extern void STM32_UART_ISR_Handler_IDLE(UART_HandleTypeDef *huart);
 /* USER CODE END 0 */
 
 /* External variables --------------------------------------------------------*/
-extern PCD_HandleTypeDef hpcd_USB_FS;
 extern DMA_HandleTypeDef hdma_usart1_rx;
 extern DMA_HandleTypeDef hdma_usart1_tx;
 extern UART_HandleTypeDef huart1;
+extern PCD_HandleTypeDef hpcd_USB_FS;
 extern TIM_HandleTypeDef htim3;
 
 /* USER CODE BEGIN EV */
@@ -205,19 +202,10 @@ void DMA1_Channel5_IRQHandler(void)
 void USB_HP_CAN1_TX_IRQHandler(void)
 {
   /* USER CODE BEGIN USB_HP_CAN1_TX_IRQn 0 */
-  /* LibXR USB Tx Cplt callback (Auto-generated, For STM32F1) */
-#if defined(STM32F1) && defined(HAL_PCD_MODULE_ENABLED)
-  STM32_USB_ISR_Handler_F1();
-#endif
-
 
   /* USER CODE END USB_HP_CAN1_TX_IRQn 0 */
   HAL_PCD_IRQHandler(&hpcd_USB_FS);
   /* USER CODE BEGIN USB_HP_CAN1_TX_IRQn 1 */
-  /* LibXR USB Tx Cplt callback (Auto-generated, For STM32F1) */
-#if defined(STM32F1) && defined(HAL_PCD_MODULE_ENABLED)
-  STM32_USB_ISR_Handler_F1();
-#endif
 
 
   /* USER CODE END USB_HP_CAN1_TX_IRQn 1 */
@@ -229,20 +217,10 @@ void USB_HP_CAN1_TX_IRQHandler(void)
 void USB_LP_CAN1_RX0_IRQHandler(void)
 {
   /* USER CODE BEGIN USB_LP_CAN1_RX0_IRQn 0 */
-  /* LibXR USB Tx Cplt callback (Auto-generated, For STM32F1) */
-#if defined(STM32F1) && defined(HAL_PCD_MODULE_ENABLED)
-  STM32_USB_ISR_Handler_F1();
-#endif
-
 
   /* USER CODE END USB_LP_CAN1_RX0_IRQn 0 */
   HAL_PCD_IRQHandler(&hpcd_USB_FS);
   /* USER CODE BEGIN USB_LP_CAN1_RX0_IRQn 1 */
-  /* LibXR USB Tx Cplt callback (Auto-generated, For STM32F1) */
-#if defined(STM32F1) && defined(HAL_PCD_MODULE_ENABLED)
-  STM32_USB_ISR_Handler_F1();
-#endif
-
 
   /* USER CODE END USB_LP_CAN1_RX0_IRQn 1 */
 }
