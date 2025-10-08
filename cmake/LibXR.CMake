@@ -4,6 +4,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 # LibXR
 set(LIBXR_SYSTEM FreeRTOS)
 set(LIBXR_DRIVER st)
+set(XROBOT_MODULES_DIR ${CMAKE_CURRENT_SOURCE_DIR}/Modules)
 add_subdirectory(Middlewares/Third_Party/LibXR)
 target_link_libraries(xr
     PUBLIC stm32cubemx
@@ -31,7 +32,7 @@ target_link_libraries(${CMAKE_PROJECT_NAME}
 )
 
 file(
-  GLOB LIBXR_USER_SOURCES "${CMAKE_CURRENT_SOURCE_DIR}/User/*.cpp")
+    GLOB LIBXR_USER_SOURCES "${CMAKE_CURRENT_SOURCE_DIR}/User/*.cpp")
 
 
 target_sources(${CMAKE_PROJECT_NAME}
