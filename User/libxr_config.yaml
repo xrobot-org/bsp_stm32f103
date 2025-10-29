@@ -8,6 +8,11 @@ SPI:
     tx_buffer_size: 32
     rx_buffer_size: 32
     dma_section: ''
+I2C:
+  i2c1:
+    buffer_size: 32
+    dma_section: ''
+    dma_enable_min_size: 3
 USART:
   usart1:
     tx_buffer_size: 128
@@ -434,44 +439,3 @@ FlashLayout:
   - index: 127
     address: '0x0803F800'
     size_kb: 2.0
-device_aliases:
-  power_manager:
-    type: PowerManager
-    aliases:
-    - power_manager
-  PA8:
-    type: GPIO
-    aliases:
-    - PA8
-  LED:
-    type: GPIO
-    aliases:
-    - LED
-  pwm_tim2_ch3:
-    type: PWM
-    aliases:
-    - pwm_tim2_ch3
-  adc1_adc_channel_0:
-    type: ADC
-    aliases:
-    - adc1_adc_channel_0
-  spi1:
-    type: SPI
-    aliases:
-    - spi1
-  usart1:
-    type: UART
-    aliases:
-    - usart1
-  usb_fs_cdc:
-    type: UART
-    aliases:
-    - usb_fs_cdc
-  ramfs:
-    type: RamFS
-    aliases:
-    - ramfs
-  terminal:
-    type: Terminal<32, 32, 5, 5>
-    aliases:
-    - terminal

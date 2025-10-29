@@ -51,11 +51,6 @@
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
-/* LibXR USB Tx Cplt callback (Auto-generated, For STM32F1) */
-/* LibXR UART IDLE callback (Auto-generated) */
-#ifdef HAL_UART_MODULE_ENABLED
-extern void STM32_UART_ISR_Handler_IDLE(UART_HandleTypeDef *huart);
-#endif
 
 /* USER CODE END 0 */
 
@@ -245,10 +240,6 @@ void TIM3_IRQHandler(void)
 void USART1_IRQHandler(void)
 {
   /* USER CODE BEGIN USART1_IRQn 0 */
-  /* LibXR UART IDLE callback (Auto-generated) */
-#ifdef HAL_UART_MODULE_ENABLED
-  STM32_UART_ISR_Handler_IDLE(&huart1);
-#endif
 
   /* USER CODE END USART1_IRQn 0 */
   HAL_UART_IRQHandler(&huart1);
