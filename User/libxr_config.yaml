@@ -1,13 +1,13 @@
 terminal_source: usb_fs_cdc
 software_timer:
-  priority: 5
+  priority: 2
   stack_depth: 1024
 SPI:
   spi1:
-    dma_enable_min_size: 3
     tx_buffer_size: 32
     rx_buffer_size: 32
     dma_section: ''
+    dma_enable_min_size: 3
 I2C:
   i2c1:
     buffer_size: 32
@@ -17,14 +17,13 @@ USART:
   usart1:
     tx_buffer_size: 128
     rx_buffer_size: 128
-    tx_queue_size: 5
-    rx_queue_size: 5
     dma_section: ''
+    tx_queue_size: 5
 ADC:
   adc1:
-    buffer_size: 128
-    vref: 3.3
+    buffer_size: 32
     dma_section: ''
+    vref: 3.3
 USB:
   usb_fs:
     enable: true
@@ -37,12 +36,12 @@ USB:
     cdc_tx_fifo_size: 128
     cdc_rx_fifo_size: 128
     cdc_queue_size: 3
-    vid: 1155
-    pid: 22336
-    bcd: 62471
+    vid: 5840
+    pid: 5266
+    bcd: 256
     manufacturer: XRobot
     product: STM32 XRUSB USB CDC Demo
-    serial: '123456789'
+    serial: XRUSB-DEMO-
 Terminal:
   read_buff_size: 32
   max_line_size: 32
