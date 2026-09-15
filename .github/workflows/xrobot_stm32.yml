@@ -21,7 +21,7 @@ jobs:
     - name: install pip packages
       run: pip install libxr xrobot
     - name: config libxr
-      run: xr_cubemx_cfg -d ./ --xrobot
+      run: xr_cubemx_cfg -d ./ --xrobot --commit "$(git rev-parse HEAD:Middlewares/Third_Party/LibXR)"
     - name: config xrobot
       run: xrobot_setup && xrobot_setup
     - name: config cmake
