@@ -1,0 +1,12 @@
+version: 1
+requests:
+- id: xrobot-org/BlinkLED
+  ref: same-or-dev
+modules:
+  xrobot-org/BlinkLED:
+    repo: https://github.com/xrobot-org/BlinkLED.git
+    source: https://xrobot.work/xrobot-modules/index.yaml
+    requested: same-or-dev
+    resolved_ref: feat/static-assembly-20260915
+    ref_kind: branch
+    commit: 8b76b4cd89c14da0661493d343f3ca3deaf2d04b

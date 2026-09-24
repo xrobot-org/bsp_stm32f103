@@ -1,8 +1,6 @@
 CMakeFiles/**
 .history/**
-Modules/**
-User/xrobot_main.hpp
-User/*.cpp
+Modules/*/
 .config.yaml
 CMakeCache.txt
 build.ninja
