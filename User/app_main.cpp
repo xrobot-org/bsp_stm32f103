@@ -197,6 +197,6 @@ extern "C" void app_main(void) {
   // clang-format on
   // NOLINTEND
   /* User Code Begin 3 */
-  XROBOT_MAIN();
   /* User Code End 3 */
+  XROBOT_MAIN();
 }
