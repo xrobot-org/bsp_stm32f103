@@ -9,4 +9,4 @@ modules:
     requested: same-or-dev
     resolved_ref: feat/static-assembly-20260915
     ref_kind: branch
-    commit: 8b76b4cd89c14da0661493d343f3ca3deaf2d04b
+    commit: a06688f8b145a197527fa97e56679437b8fc2180
