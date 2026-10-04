@@ -34,9 +34,8 @@ USB:
     rx_fifo_size: 128
     tx_fifo_size: 128
     dma_section: ''
-    cdc_tx_fifo_size: 128
-    cdc_rx_fifo_size: 128
-    cdc_queue_size: 3
+    cdc:
+    - {tx_fifo_size: 128, rx_fifo_size: 128, queue_size: 3}
     vid: 5840
     pid: 5266
     bcd: 256
@@ -49,4 +48,7 @@ Terminal:
   max_arg_number: 5
   max_history_number: 5
   run_as_thread: false
+database:
+  enable: false
+  block_size: 1
 SYSTEM: FreeRTOS
