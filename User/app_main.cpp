@@ -77,8 +77,8 @@ extern "C" void app_main(void)
                                     {{usb_fs_ep0_in_buf, usb_fs_ep0_out_buf, 8, 8},
                                      {usb_fs_ep1_in_buf, usb_fs_ep1_out_buf, 128, 128},
                                      {usb_fs_ep2_in_buf, 16, true}},
-                                    USB::DeviceDescriptor::PacketSize0::SIZE_8, 0x16D0,
-                                    0x1492, 0x100, {&usb_fs_strings}, {{&usb_fs_cdc}},
+                                    USB::DeviceDescriptor::PacketSize0::SIZE_8, 0x1D50,
+                                    0x6199, 0x100, {&usb_fs_strings}, {{&usb_fs_cdc}},
                                     {reinterpret_cast<void*>(UID_BASE), 12});
   usb_fs.Init(false);
   usb_fs.Start(false);
