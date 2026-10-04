@@ -32,6 +32,8 @@ extern UART_HandleTypeDef huart1;
 // DMA buffers (STM32F103RC: no D-cache)
 alignas(4) static uint16_t adc1_buf[16];
 alignas(4) static uint8_t i2c1_buf[32];
+alignas(4) static uint8_t spi1_rx_buf[32];
+alignas(4) static uint8_t spi1_tx_buf[32];
 alignas(4) static uint8_t usart1_rx_buf[128];
 alignas(4) static uint8_t usart1_tx_buf[128];
 alignas(4) static uint8_t usb_fs_ep0_in_buf[8];
@@ -62,7 +64,7 @@ extern "C" void app_main(void)
   static STM32PWM pwm_tim2_ch3(&htim2, TIM_CHANNEL_3, false);
 
   // SPI, UART, I2C
-  static STM32SPI spi1(&hspi1, {nullptr, 0}, {nullptr, 0}, 3);
+  static STM32SPI spi1(&hspi1, spi1_rx_buf, spi1_tx_buf, UINT32_MAX);
   static STM32UART usart1(&huart1, usart1_rx_buf, usart1_tx_buf, 5);
   static STM32I2C i2c1(&hi2c1, i2c1_buf, 3);
 
@@ -77,8 +79,8 @@ extern "C" void app_main(void)
                                     {{usb_fs_ep0_in_buf, usb_fs_ep0_out_buf, 8, 8},
                                      {usb_fs_ep1_in_buf, usb_fs_ep1_out_buf, 128, 128},
                                      {usb_fs_ep2_in_buf, 16, true}},
-                                    USB::DeviceDescriptor::PacketSize0::SIZE_8, 0x16D0,
-                                    0x1492, 0x100, {&usb_fs_strings}, {{&usb_fs_cdc}},
+                                    USB::DeviceDescriptor::PacketSize0::SIZE_8, 0x1D50,
+                                    0x6199, 0x100, {&usb_fs_strings}, {{&usb_fs_cdc}},
                                     {reinterpret_cast<void*>(UID_BASE), 12});
   usb_fs.Init(false);
   usb_fs.Start(false);
