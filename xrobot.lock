@@ -8,6 +8,6 @@ modules:
     repo: https://github.com/xrobot-org/BlinkLED.git
     source: https://xrobot.work/xrobot-modules/index.yaml
     requested: same-or-dev
-    resolved_ref: dev
+    resolved_ref: master
     ref_kind: branch
-    commit: 2fc91fb42b01ce61db3e398cc80ee1bdc0e70638
+    commit: 0ca1620261fea84a3a391ff219199b7bef4d9a1e
